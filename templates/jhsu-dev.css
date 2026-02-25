@@ -1,0 +1,118 @@
+/* jhsu-dev.css - Noctalia user template */
+
+:root {
+<* for name, value in colors *>
+  --noctalia-{{name | kebab_case}}: {{value.default.hex}};
+  --noctalia-{{name | kebab_case}}-rgb: {{value.default.red}}, {{value.default.green}}, {{value.default.blue}};
+<* endfor *>
+
+  --noctalia-primary-soft: {{colors.primary.default.hex | set_alpha 0.14}};
+  --noctalia-primary-hover: {{colors.primary.default.hex | auto_lightness 10}};
+  --noctalia-primary-focus: {{colors.primary.default.hex | set_alpha 0.28}};
+
+  --noctalia-surface-overlay: {{colors.surface.default.hex | set_alpha 0.9}};
+  --noctalia-surface-raised: {{colors.surface.default.hex | auto_lightness 6}};
+  --noctalia-surface-muted: {{colors.surface_variant.default.hex | set_alpha 0.72}};
+
+  --noctalia-outline-soft: {{colors.outline.default.hex | set_alpha 0.45}};
+  --noctalia-outline-strong: {{colors.outline.default.hex | auto_lightness 10}};
+  --noctalia-shadow-soft: {{colors.shadow.default.hex | set_alpha 0.2}};
+
+  --noctalia-info: {{colors.secondary.default.hex | harmonize "#5b8def"}};
+  --noctalia-success: {{colors.primary.default.hex | blend "#22c55e", 28}};
+  --noctalia-warning: {{colors.tertiary.default.hex | blend "#f59e0b", 35}};
+  --noctalia-danger: {{colors.error.default.hex | blend "#ef4444", 25}};
+
+  --noctalia-mError: var(--noctalia-error);
+  --noctalia-mOnError: var(--noctalia-on-error);
+  --noctalia-mOnPrimary: var(--noctalia-on-primary);
+  --noctalia-mOnSecondary: var(--noctalia-on-primary);
+  --noctalia-mOnSurface: var(--noctalia-on-surface-variant);
+  --noctalia-mOnSurfaceVariant: var(--noctalia-on-surface);
+  --noctalia-mOnTertiary: var(--noctalia-on-tertiary);
+  --noctalia-mOutline: var(--noctalia-outline);
+  --noctalia-mPrimary: var(--noctalia-primary);
+  --noctalia-mSecondary: var(--noctalia-primary);
+  --noctalia-mShadow: var(--noctalia-shadow);
+  --noctalia-mSurface: var(--noctalia-surface);
+  --noctalia-mSurfaceVariant: var(--noctalia-surface-container-high);
+  --noctalia-mTertiary: var(--noctalia-tertiary);
+}
+
+html:root.theme-light {
+<* for name, value in colors *>
+  --noctalia-{{name | kebab_case}}: {{value.light.hex}};
+  --noctalia-{{name | kebab_case}}-rgb: {{value.light.red}}, {{value.light.green}}, {{value.light.blue}};
+<* endfor *>
+
+  --noctalia-primary-soft: {{colors.primary.light.hex | set_alpha 0.14}};
+  --noctalia-primary-hover: {{colors.primary.light.hex | darken 6}};
+  --noctalia-primary-focus: {{colors.primary.light.hex | set_alpha 0.28}};
+
+  --noctalia-surface-overlay: {{colors.surface.light.hex | set_alpha 0.9}};
+  --noctalia-surface-raised: {{colors.surface.light.hex | darken 3}};
+  --noctalia-surface-muted: {{colors.surface_variant.light.hex | set_alpha 0.72}};
+
+  --noctalia-outline-soft: {{colors.outline.light.hex | set_alpha 0.45}};
+  --noctalia-outline-strong: {{colors.outline.light.hex | darken 12}};
+  --noctalia-shadow-soft: {{colors.shadow.light.hex | set_alpha 0.2}};
+
+  --noctalia-info: {{colors.secondary.light.hex | harmonize "#5b8def"}};
+  --noctalia-success: {{colors.primary.light.hex | blend "#22c55e", 28}};
+  --noctalia-warning: {{colors.tertiary.light.hex | blend "#f59e0b", 35}};
+  --noctalia-danger: {{colors.error.light.hex | blend "#ef4444", 25}};
+
+  --noctalia-mError: var(--noctalia-error);
+  --noctalia-mOnError: var(--noctalia-on-error);
+  --noctalia-mOnPrimary: var(--noctalia-on-primary);
+  --noctalia-mOnSecondary: var(--noctalia-on-primary);
+  --noctalia-mOnSurface: var(--noctalia-on-surface-variant);
+  --noctalia-mOnSurfaceVariant: var(--noctalia-on-surface);
+  --noctalia-mOnTertiary: var(--noctalia-on-tertiary);
+  --noctalia-mOutline: var(--noctalia-outline);
+  --noctalia-mPrimary: var(--noctalia-primary);
+  --noctalia-mSecondary: var(--noctalia-primary);
+  --noctalia-mShadow: var(--noctalia-shadow);
+  --noctalia-mSurface: var(--noctalia-surface);
+  --noctalia-mSurfaceVariant: var(--noctalia-surface-container-high);
+  --noctalia-mTertiary: var(--noctalia-tertiary);
+}
+
+html:root.theme-dark {
+<* for name, value in colors *>
+  --noctalia-{{name | kebab_case}}: {{value.dark.hex}};
+  --noctalia-{{name | kebab_case}}-rgb: {{value.dark.red}}, {{value.dark.green}}, {{value.dark.blue}};
+<* endfor *>
+
+  --noctalia-primary-soft: {{colors.primary.dark.hex | set_alpha 0.18}};
+  --noctalia-primary-hover: {{colors.primary.dark.hex | lighten 8}};
+  --noctalia-primary-focus: {{colors.primary.dark.hex | set_alpha 0.32}};
+
+  --noctalia-surface-overlay: {{colors.surface.dark.hex | set_alpha 0.9}};
+  --noctalia-surface-raised: {{colors.surface.dark.hex | lighten 6}};
+  --noctalia-surface-muted: {{colors.surface_variant.dark.hex | set_alpha 0.72}};
+
+  --noctalia-outline-soft: {{colors.outline.dark.hex | set_alpha 0.45}};
+  --noctalia-outline-strong: {{colors.outline.dark.hex | lighten 16}};
+  --noctalia-shadow-soft: {{colors.shadow.dark.hex | set_alpha 0.25}};
+
+  --noctalia-info: {{colors.secondary.dark.hex | harmonize "#5b8def"}};
+  --noctalia-success: {{colors.primary.dark.hex | blend "#22c55e", 28}};
+  --noctalia-warning: {{colors.tertiary.dark.hex | blend "#f59e0b", 35}};
+  --noctalia-danger: {{colors.error.dark.hex | blend "#ef4444", 25}};
+
+  --noctalia-mError: var(--noctalia-error);
+  --noctalia-mOnError: var(--noctalia-on-error);
+  --noctalia-mOnPrimary: var(--noctalia-on-primary);
+  --noctalia-mOnSecondary: var(--noctalia-on-primary);
+  --noctalia-mOnSurface: var(--noctalia-on-surface-variant);
+  --noctalia-mOnSurfaceVariant: var(--noctalia-on-surface);
+  --noctalia-mOnTertiary: var(--noctalia-on-tertiary);
+  --noctalia-mOutline: var(--noctalia-outline);
+  --noctalia-mPrimary: var(--noctalia-primary);
+  --noctalia-mSecondary: var(--noctalia-primary);
+  --noctalia-mShadow: var(--noctalia-shadow);
+  --noctalia-mSurface: var(--noctalia-surface);
+  --noctalia-mSurfaceVariant: var(--noctalia-surface-container-high);
+  --noctalia-mTertiary: var(--noctalia-tertiary);
+}
