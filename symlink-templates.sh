@@ -8,14 +8,21 @@ TARGET_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/noctalia/templates"
 mkdir -p "$TARGET_DIR"
 
 shopt -s nullglob
-templates=("$SOURCE_DIR"/*.json)
+templates=("$SOURCE_DIR"/*)
 
-if [ ${#templates[@]} -eq 0 ]; then
-  echo "No template JSON files found in $SOURCE_DIR"
+files=()
+for template in "${templates[@]}"; do
+  if [ -f "$template" ] || [ -L "$template" ]; then
+    files+=("$template")
+  fi
+done
+
+if [ ${#files[@]} -eq 0 ]; then
+  echo "No template files found in $SOURCE_DIR"
   exit 0
 fi
 
-for template in "${templates[@]}"; do
+for template in "${files[@]}"; do
   target="$TARGET_DIR/$(basename "$template")"
   if [ -e "$target" ] || [ -L "$target" ]; then
     echo "Warning: $target already exists; skipping"
@@ -26,4 +33,4 @@ for template in "${templates[@]}"; do
   echo "Linked $target -> $template"
 done
 
-echo "Done. Linked ${#templates[@]} template(s) into $TARGET_DIR"
+echo "Done. Linked ${#files[@]} template file(s) into $TARGET_DIR"

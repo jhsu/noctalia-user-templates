@@ -2,6 +2,8 @@
 
 noctalia - desktop shell for wayland
 
+The template documentation: `./noctalia.md`
+
 See [noctalia theming user-templates](https://docs.noctalia.dev/theming/user-templates/) documentation for information on how to setup user-templates.
 
 ## included:
