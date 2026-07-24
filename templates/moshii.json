@@ -1,0 +1,27 @@
+{
+  "v": 1,
+  "name": "Noctalia",
+  "mode": "dark",
+  "colors": {
+    "background": "{{colors.surface.default.hex}}",
+    "foreground": "{{colors.on_surface.default.hex}}",
+    "cursor": "{{colors.primary.default.hex}}",
+    "black": "{{colors.surface.default.hex}}",
+    "red": "{{colors.error.default.hex}}",
+    "green": "{{colors.tertiary.default.hex}}",
+    "yellow": "{{colors.tertiary.default.hex}}",
+    "blue": "{{colors.primary.default.hex}}",
+    "magenta": "{{colors.secondary.default.hex}}",
+    "cyan": "{{colors.secondary.default.hex}}",
+    "white": "{{colors.on_surface_variant.default.hex}}",
+    "brightBlack": "{{colors.outline.default.hex}}",
+    "brightRed": "{{colors.error.default.hex}}",
+    "brightGreen": "{{colors.tertiary.default.hex}}",
+    "brightYellow": "{{colors.tertiary.default.hex}}",
+    "brightBlue": "{{colors.primary.default.hex}}",
+    "brightMagenta": "{{colors.secondary.default.hex}}",
+    "brightCyan": "{{colors.secondary.default.hex}}",
+    "brightWhite": "{{colors.on_surface.default.hex}}",
+    "selectionBackground": "{{colors.primary_container.default.hex}}"
+  }
+}
